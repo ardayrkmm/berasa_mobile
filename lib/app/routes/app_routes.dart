@@ -10,6 +10,9 @@ abstract class Routes {
   static const SPLASH3 = _Paths.SPLASH3;
   static const REGISTER = _Paths.REGISTER;
   static const LOGIN = _Paths.LOGIN;
+  static const DETAIL_ACARA = _Paths.DETAIL_ACARA;
+  static const BERHASIL_DONASI = _Paths.BERHASIL_DONASI;
+  static const FORM_DONASI = _Paths.FORM_DONASI;
 }
 
 abstract class _Paths {
@@ -21,4 +24,7 @@ abstract class _Paths {
   static const SPLASH3 = '/splash3';
   static const REGISTER = '/register';
   static const LOGIN = '/login';
+  static const DETAIL_ACARA = '/detail-acara';
+  static const BERHASIL_DONASI = '/berhasil-donasi';
+  static const FORM_DONASI = '/form-donasi';
 }
