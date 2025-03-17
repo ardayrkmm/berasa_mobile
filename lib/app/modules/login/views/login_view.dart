@@ -1,5 +1,7 @@
 import 'package:berasa_mobile/app/Widget/BtnBaru.dart';
 import 'package:berasa_mobile/app/Widget/Inputan.dart';
+import 'package:berasa_mobile/app/modules/splash/views/Loading.dart';
+import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +10,8 @@ import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+  final LoginController loginC = Get.find<LoginController>();
+  LoginView({super.key});
   @override
   Widget build(BuildContext context) {
     Widget bagianHeader() {
@@ -58,7 +61,15 @@ class LoginView extends GetView<LoginController> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            BtnBaru(w: double.infinity, h: 50, nama: "Login", fungsi: () {}),
+            BtnBaru(
+              w: double.infinity,
+              h: 50,
+              nama: "Login",
+              fungsi: () async {
+                await loginC.login(loginC.emailC.text, loginC.passC.text);
+              },
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -66,9 +77,15 @@ class LoginView extends GetView<LoginController> {
                   "Belum punya akun?",
                   style: abu2Sty.copyWith(fontSize: 12, fontWeight: light),
                 ),
-                Text(
-                  "Login",
-                  style: biruStyle.copyWith(fontSize: 12, fontWeight: bold),
+                SizedBox(width: 8),
+                GestureDetector(
+                  onTap: () {
+                    Get.offNamed(Routes.REGISTER);
+                  },
+                  child: Text(
+                    "Register",
+                    style: biruStyle.copyWith(fontSize: 12, fontWeight: bold),
+                  ),
                 ),
               ],
             ),
@@ -126,6 +143,7 @@ class LoginView extends GetView<LoginController> {
 
             Inputan(
               w: double.infinity,
+              cs: loginC.emailC,
               h: 50,
               icon: "assets/email.png",
               labelInput: "Masukan email",
@@ -133,6 +151,7 @@ class LoginView extends GetView<LoginController> {
 
             Inputan(
               w: double.infinity,
+              cs: loginC.passC,
               h: 50,
               icon: "assets/pass.png",
               labelInput: "Masukan nomer password",
@@ -144,9 +163,15 @@ class LoginView extends GetView<LoginController> {
                   "Lupa Password?",
                   style: abu2Sty.copyWith(fontSize: 12, fontWeight: light),
                 ),
-                Text(
-                  "Reset password",
-                  style: biruStyle.copyWith(fontSize: 12, fontWeight: bold),
+                SizedBox(width: 8),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.UBAHPASSWORD_EMAIL);
+                  },
+                  child: Text(
+                    "Ubah",
+                    style: biruStyle.copyWith(fontSize: 12, fontWeight: bold),
+                  ),
                 ),
               ],
             ),
