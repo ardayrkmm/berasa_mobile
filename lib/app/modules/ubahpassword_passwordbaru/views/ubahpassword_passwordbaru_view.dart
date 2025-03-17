@@ -1,20 +1,20 @@
 import 'package:berasa_mobile/app/Widget/BtnBaru.dart';
 import 'package:berasa_mobile/app/Widget/Inputan.dart';
-import 'package:berasa_mobile/app/modules/splash/views/Loading.dart';
 import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/register_controller.dart';
+import '../controllers/ubahpassword_passwordbaru_controller.dart';
 
-class RegisterView extends GetView<RegisterController> {
-  final RegisterController registerController = Get.find<RegisterController>();
-
-  RegisterView({super.key});
+class UbahpasswordPasswordbaruView
+    extends GetView<UbahpasswordPasswordbaruController> {
+  const UbahpasswordPasswordbaruView({super.key});
   @override
   Widget build(BuildContext context) {
+    TextEditingController password = TextEditingController();
+    TextEditingController konfirmasiPassword = TextEditingController();
     Widget bagianHeader() {
       return Container(
         width: MediaQuery.of(context).size.width,
@@ -65,61 +65,10 @@ class RegisterView extends GetView<RegisterController> {
             BtnBaru(
               w: double.infinity,
               h: 50,
-              nama: "Register",
-              fungsi: () async {
-                await registerController.buatAkun(
-                  registerController.emailController.text,
-                  registerController.passwordController.text,
-                  registerController.nomerTeleponC.text,
-                  registerController.nameController.text,
-                );
+              nama: "Selanjutnya",
+              fungsi: () {
+                Get.toNamed(Routes.LOGIN);
               },
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Sudah Punya akun?",
-                  style: abu2Sty.copyWith(fontSize: 12, fontWeight: light),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Get.offNamed(Routes.LOGIN);
-                  },
-                  child: Text(
-                    "Login",
-                    style: biruStyle.copyWith(fontSize: 12, fontWeight: bold),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Text(
-              "Atau",
-              style: abu2Sty.copyWith(fontSize: 12, fontWeight: light),
-            ),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/gogel.png"),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("assets/fb.png")),
-                  ),
-                ),
-              ],
             ),
           ],
         );
@@ -140,39 +89,30 @@ class RegisterView extends GetView<RegisterController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Register",
-              style: biruStyle.copyWith(fontSize: 20, fontWeight: bold),
-            ),
-            SizedBox(height: 40),
-            Inputan(
-              w: double.infinity,
-              cs: registerController.nameController,
-              h: 50,
-              icon: "assets/nama.png",
-              labelInput: "Masukan nama",
-            ),
-            Inputan(
-              w: double.infinity,
-              cs: registerController.emailController,
-              h: 50,
-              icon: "assets/email.png",
-              labelInput: "Masukan email",
-            ),
-            Inputan(
-              w: double.infinity,
-              cs: registerController.nomerTeleponC,
-              h: 50,
-              icon: "assets/telp.png",
-              labelInput: "Masukan nomer telpon",
-            ),
-            Inputan(
-              w: double.infinity,
-              cs: registerController.passwordController,
-              h: 50,
-              icon: "assets/pass.png",
-              labelInput: "Masukan password",
+              "Reset Password",
+              style: biruStyle.copyWith(fontSize: 24, fontWeight: bold),
             ),
 
+            Text(
+              "Masukan kata sandi terbaru kamu",
+              style: biruStyle.copyWith(fontSize: 15, fontWeight: light),
+            ),
+
+            SizedBox(height: 40),
+            Inputan(
+              cs: password,
+              w: double.infinity,
+              h: 50,
+              icon: "assets/pass.png",
+              labelInput: "Masukan password baru",
+            ),
+            Inputan(
+              cs: konfirmasiPassword,
+              w: double.infinity,
+              h: 50,
+              icon: "assets/pass.png",
+              labelInput: "Masukan konfirmasi password",
+            ),
             SizedBox(height: 25),
             bagianTombol(),
           ],
