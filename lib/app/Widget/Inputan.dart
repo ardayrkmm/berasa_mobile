@@ -5,12 +5,13 @@ import 'package:flutter/widgets.dart';
 class Inputan extends StatelessWidget {
   double w, h;
   String icon, labelInput;
+  TextEditingController cs;
   Inputan({
     super.key,
     required this.w,
     required this.h,
     required this.icon,
-
+    required this.cs,
     required this.labelInput,
   });
 
@@ -39,6 +40,7 @@ class Inputan extends StatelessWidget {
           SizedBox(width: 10),
           Expanded(
             child: TextField(
+              controller: cs,
               style: abu2Sty.copyWith(fontSize: 14, fontWeight: semiBold),
               decoration: InputDecoration(
                 hintText: labelInput,

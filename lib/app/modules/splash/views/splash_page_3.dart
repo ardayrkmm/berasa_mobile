@@ -68,7 +68,7 @@ class SplashPage3View extends GetView {
                   w: 88,
                   h: 50,
                   fungsi: () {
-                    Get.offNamed(Routes.SPLASH1);
+                    Get.offNamed(Routes.REGISTER);
                   },
                   nama: "Next",
                 ),
