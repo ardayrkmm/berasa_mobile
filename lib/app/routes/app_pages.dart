@@ -1,3 +1,4 @@
+import 'package:berasa_mobile/app/modules/detailProfil/views/detail_profil_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/berhasilDonasi/bindings/berhasil_donasi_binding.dart';
