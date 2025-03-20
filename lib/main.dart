@@ -10,13 +10,14 @@ void main() async {
   await GetStorage.init();
   String cekPengguna() {
     final box = GetStorage();
-    return box.read("token") != null ? Routes.HOME : Routes.SPLASH;
+    return box.read("token") != null ? Routes.MAINPAGE : Routes.SPLASH;
   }
 
   runApp(
     GetMaterialApp(
       title: "Application",
       initialRoute: cekPengguna(),
+      debugShowCheckedModeBanner: false,
       getPages: AppPages.routes,
     ),
   );

@@ -20,12 +20,16 @@ abstract class Routes {
   static const PROFIL = _Paths.PROFIL;
   static const RIWAYAT = _Paths.RIWAYAT;
 
-
   static const VERIFIKASI_EMAIL = _Paths.VERIFIKASI_EMAIL;
   static const VERIFIKASI_UBAH_PASSWORD = _Paths.VERIFIKASI_UBAH_PASSWORD;
   static const UBAHPASSWORD_EMAIL = _Paths.UBAHPASSWORD_EMAIL;
   static const UBAHPASSWORD_PASSWORDBARU = _Paths.UBAHPASSWORD_PASSWORDBARU;
 
+  static const MAINPAGE = _Paths.MAINPAGE;
+  static const DONASI = _Paths.DONASI;
+  static const LIST_BARANG_DONASI = _Paths.LIST_BARANG_DONASI;
+
+  static const DETAIL_RIWAYAT = _Paths.DETAIL_RIWAYAT;
 }
 
 abstract class _Paths {
@@ -47,9 +51,14 @@ abstract class _Paths {
   static const PROFIL = '/profil';
   static const RIWAYAT = '/riwayat';
 
-
   static const VERIFIKASI_EMAIL = '/verifikasi-email';
   static const VERIFIKASI_UBAH_PASSWORD = '/verifikasi-ubah-password';
   static const UBAHPASSWORD_EMAIL = '/ubahpassword-email';
   static const UBAHPASSWORD_PASSWORDBARU = '/ubahpassword-passwordbaru';
 
+  static const MAINPAGE = '/mainpage';
+  static const DONASI = '/donasi';
+  static const LIST_BARANG_DONASI = '/list-barang-donasi';
+
+  static const DETAIL_RIWAYAT = '/detail-riwayat';
+}

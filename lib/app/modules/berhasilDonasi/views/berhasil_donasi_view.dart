@@ -51,7 +51,7 @@ class BerhasilDonasiView extends StatelessWidget {
                 h: 50,
                 nama: "Selanjutnya",
                 fungsi: () {
-                  Get.back(); // Atau arahkan ke halaman lain sesuai kebutuhan
+                  Get.back();
                 },
               ),
             ),
