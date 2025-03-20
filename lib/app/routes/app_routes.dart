@@ -13,6 +13,10 @@ abstract class Routes {
   static const DETAIL_ACARA = _Paths.DETAIL_ACARA;
   static const BERHASIL_DONASI = _Paths.BERHASIL_DONASI;
   static const FORM_DONASI = _Paths.FORM_DONASI;
+  static const LEADERBOARD = _Paths.LEADERBOARD;
+  static const DETAIL_PROFIL = _Paths.DETAIL_PROFIL;
+  static const PROFIL = _Paths.PROFIL;
+  static const RIWAYAT = _Paths.RIWAYAT;
 }
 
 abstract class _Paths {
@@ -27,4 +31,8 @@ abstract class _Paths {
   static const DETAIL_ACARA = '/detail-acara';
   static const BERHASIL_DONASI = '/berhasil-donasi';
   static const FORM_DONASI = '/form-donasi';
+  static const LEADERBOARD = '/leaderboard';
+  static const DETAIL_PROFIL = '/detail-profil';
+  static const PROFIL = '/profil';
+  static const RIWAYAT = '/riwayat';
 }

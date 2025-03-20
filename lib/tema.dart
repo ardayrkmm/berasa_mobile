@@ -9,7 +9,7 @@ Color putih = Color(0xffFFFFFF);
 Color oren = Color(0xffFFBF67);
 Color kuning = Color(0xffF8E646);
 LinearGradient biruGradient = LinearGradient(
-  colors: [Color(0xff1D75F2), Color(0xff1AC6FB)],
+  colors: [Color(0xff1AC6FB), Color(0xff1D75F2)],
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
 );
