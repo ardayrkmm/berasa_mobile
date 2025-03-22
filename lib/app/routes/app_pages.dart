@@ -1,16 +1,17 @@
-import 'package:berasa_mobile/app/modules/detailProfil/views/detail_profil_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/berhasilDonasi/bindings/berhasil_donasi_binding.dart';
 import '../modules/berhasilDonasi/views/berhasil_donasi_view.dart';
 import '../modules/detailAcara/bindings/detail_acara_binding.dart';
 import '../modules/detailAcara/views/detail_acara_view.dart';
+import '../modules/detailProfil/views/detail_profil_view.dart';
 import '../modules/formDonasi/bindings/form_donasi_binding.dart';
 import '../modules/formDonasi/views/form_donasi_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/profil/views/profil_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -19,6 +20,8 @@ import '../modules/splash/views/splash_page_1_view.dart';
 import '../modules/splash/views/splash_page_2.dart';
 import '../modules/splash/views/splash_page_3.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/updateProfile/bindings/update_profile_binding.dart';
+import '../modules/updateProfile/views/update_profile_view.dart';
 
 part 'app_routes.dart';
 
@@ -30,7 +33,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const DetailProfilView(),
+      page: () => const UpdateProfileView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -69,6 +72,11 @@ class AppPages {
       name: _Paths.FORM_DONASI,
       page: () => const FormDonasiView(),
       binding: FormDonasiBinding(),
+    ),
+    GetPage(
+      name: _Paths.UPDATE_PROFILE,
+      page: () => const UpdateProfileView(),
+      binding: UpdateProfileBinding(),
     ),
   ];
 }

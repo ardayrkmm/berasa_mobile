@@ -17,6 +17,7 @@ abstract class Routes {
   static const DETAIL_PROFIL = _Paths.DETAIL_PROFIL;
   static const PROFIL = _Paths.PROFIL;
   static const RIWAYAT = _Paths.RIWAYAT;
+  static const UPDATE_PROFILE = _Paths.UPDATE_PROFILE;
 }
 
 abstract class _Paths {
@@ -35,4 +36,5 @@ abstract class _Paths {
   static const DETAIL_PROFIL = '/detail-profil';
   static const PROFIL = '/profil';
   static const RIWAYAT = '/riwayat';
+  static const UPDATE_PROFILE = '/update-profile';
 }
