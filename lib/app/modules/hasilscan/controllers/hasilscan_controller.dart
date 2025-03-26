@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class LeaderboardController extends GetxController {
-  //TODO: Implement LeaderboardController
+class HasilscanController extends GetxController {
+  //TODO: Implement HasilscanController
 
   final count = 0.obs;
   @override
@@ -9,7 +9,6 @@ class LeaderboardController extends GetxController {
     super.onInit();
   }
 
-  var selectedTab = 'Today'.obs;
   @override
   void onReady() {
     super.onReady();

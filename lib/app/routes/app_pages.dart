@@ -1,4 +1,3 @@
-import 'package:berasa_mobile/app/modules/detailProfil/views/detail_profil_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/berhasilDonasi/bindings/berhasil_donasi_binding.dart';
@@ -11,8 +10,14 @@ import '../modules/donasi/bindings/donasi_binding.dart';
 import '../modules/donasi/views/donasi_view.dart';
 import '../modules/formDonasi/bindings/form_donasi_binding.dart';
 import '../modules/formDonasi/views/form_donasi_view.dart';
+import '../modules/halamanMaps/bindings/halaman_maps_binding.dart';
+import '../modules/halamanMaps/views/halaman_maps_view.dart';
+import '../modules/hasilscan/bindings/hasilscan_binding.dart';
+import '../modules/hasilscan/views/hasilscan_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/leaderboard/bindings/leaderboard_binding.dart';
+import '../modules/leaderboard/views/leaderboard_view.dart';
 import '../modules/listBarangDonasi/bindings/list_barang_donasi_binding.dart';
 import '../modules/listBarangDonasi/views/list_barang_donasi_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -23,8 +28,9 @@ import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/riwayat/bindings/riwayat_binding.dart';
 import '../modules/riwayat/views/riwayat_view.dart';
+import '../modules/scan/bindings/scan_binding.dart';
+import '../modules/scan/views/scan_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
-import '../modules/splash/views/Loading.dart';
 import '../modules/splash/views/splash_page_1_view.dart';
 import '../modules/splash/views/splash_page_2.dart';
 import '../modules/splash/views/splash_page_3.dart';
@@ -132,6 +138,26 @@ class AppPages {
       name: _Paths.DETAIL_RIWAYAT,
       page: () => const DetailRiwayatView(),
       binding: DetailRiwayatBinding(),
+    ),
+    GetPage(
+      name: _Paths.SCAN,
+      page: () => const ScanView(),
+      binding: ScanBinding(),
+    ),
+    GetPage(
+      name: _Paths.HASILSCAN,
+      page: () => const HasilscanView(),
+      binding: HasilscanBinding(),
+    ),
+    GetPage(
+      name: _Paths.LEADERBOARD,
+      page: () => LeaderboardView(),
+      binding: LeaderboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.HALAMAN_MAPS,
+      page: () => const HalamanMapsView(),
+      binding: HalamanMapsBinding(),
     ),
   ];
 }

@@ -4,6 +4,7 @@ import 'package:berasa_mobile/app/modules/donasi/views/donasi_view.dart';
 import 'package:berasa_mobile/app/modules/formDonasi/views/form_donasi_view.dart';
 import 'package:berasa_mobile/app/modules/home/views/home_view.dart';
 import 'package:berasa_mobile/app/modules/riwayat/views/riwayat_view.dart';
+import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,9 @@ class MainpageView extends GetView<MainpageController> {
       extendBody: true,
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.SCAN);
+        },
         shape: CircleBorder(),
         backgroundColor: Color(0xffC1DFFD),
         child: Image.asset("assets/scan.png", width: 40, height: 40),

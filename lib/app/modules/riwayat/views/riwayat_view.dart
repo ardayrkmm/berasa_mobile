@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-=======
 import 'package:berasa_mobile/app/Widget/CardRiwayat.dart';
 import 'package:berasa_mobile/tema.dart';
->>>>>>> 7e8cd64 (fitur selanjutnya)
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -13,7 +11,6 @@ class RiwayatView extends GetView<RiwayatController> {
   const RiwayatView({super.key});
   @override
   Widget build(BuildContext context) {
-
     return DefaultTabController(
       initialIndex: 0,
       length: 2,
@@ -34,7 +31,6 @@ class RiwayatView extends GetView<RiwayatController> {
             ),
             Center(child: Text("Belum Ada data")),
           ],
->>>>>>> 7e8cd64 (fitur selanjutnya)
         ),
       ),
     );

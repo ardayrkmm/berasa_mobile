@@ -16,6 +16,7 @@ void main() async {
   runApp(
     GetMaterialApp(
       title: "Application",
+      locale: Locale('id', 'ID'),
       initialRoute: cekPengguna(),
       debugShowCheckedModeBanner: false,
       getPages: AppPages.routes,

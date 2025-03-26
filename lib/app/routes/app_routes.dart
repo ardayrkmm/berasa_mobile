@@ -30,6 +30,9 @@ abstract class Routes {
   static const LIST_BARANG_DONASI = _Paths.LIST_BARANG_DONASI;
 
   static const DETAIL_RIWAYAT = _Paths.DETAIL_RIWAYAT;
+  static const SCAN = _Paths.SCAN;
+  static const HASILSCAN = _Paths.HASILSCAN;
+  static const HALAMAN_MAPS = _Paths.HALAMAN_MAPS;
 }
 
 abstract class _Paths {
@@ -61,4 +64,7 @@ abstract class _Paths {
   static const LIST_BARANG_DONASI = '/list-barang-donasi';
 
   static const DETAIL_RIWAYAT = '/detail-riwayat';
+  static const SCAN = '/scan';
+  static const HASILSCAN = '/hasilscan';
+  static const HALAMAN_MAPS = '/halaman-maps';
 }

@@ -1,4 +1,5 @@
 import 'package:berasa_mobile/app/Widget/CardProgram.dart';
+import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 
@@ -81,27 +82,37 @@ class HomeView extends GetView<HomeController> {
             SizedBox(height: 18),
             Row(
               children: [
-                Container(
-                  width: 65,
-                  height: 65,
-                  margin: EdgeInsets.only(right: 10),
-                  decoration: BoxDecoration(
-                    color: putih,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.LEADERBOARD);
+                  },
+                  child: Container(
+                    width: 65,
+                    height: 65,
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      color: putih,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
 
-                  child: Center(child: Icon(Icons.leaderboard, color: biru)),
+                    child: Center(child: Icon(Icons.leaderboard, color: biru)),
+                  ),
                 ),
-                Container(
-                  width: 65,
-                  height: 65,
-                  margin: EdgeInsets.only(right: 10),
-                  decoration: BoxDecoration(
-                    color: putih,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.HALAMAN_MAPS);
+                  },
+                  child: Container(
+                    width: 65,
+                    height: 65,
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      color: putih,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
 
-                  child: Center(child: Icon(Icons.map, color: biru)),
+                    child: Center(child: Icon(Icons.map, color: biru)),
+                  ),
                 ),
               ],
             ),

@@ -1,12 +1,9 @@
+import 'package:berasa_mobile/app/modules/leaderboard/controllers/leaderboard_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:berasa_mobile/tema.dart';
 
-class LeaderboardController extends GetxController {
-  var selectedTab = 'Today'.obs;
-}
-
-class LeaderboardView extends StatelessWidget {
+class LeaderboardView extends GetView<LeaderboardController> {
   final LeaderboardController controller = Get.put(LeaderboardController());
 
   @override
@@ -82,9 +79,9 @@ class LeaderboardView extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildProfile("Amad", "assets/profile2.png", 2),
-        _buildProfile("Arda", "assets/profile1.png", 1, isMain: true),
-        _buildProfile("Amad", "assets/profile3.png", 3),
+        _buildProfile("Amad", "assets/sp2.png", 2),
+        _buildProfile("Arda", "assets/sp2.png", 1, isMain: true),
+        _buildProfile("Amad", "assets/sp2.png", 3),
       ],
     );
   }
