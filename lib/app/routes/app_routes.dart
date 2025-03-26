@@ -33,6 +33,8 @@ abstract class Routes {
   static const SCAN = _Paths.SCAN;
   static const HASILSCAN = _Paths.HASILSCAN;
   static const HALAMAN_MAPS = _Paths.HALAMAN_MAPS;
+
+  static const UPDATE_PROFILE = _Paths.UPDATE_PROFILE;
 }
 
 abstract class _Paths {
@@ -67,4 +69,6 @@ abstract class _Paths {
   static const SCAN = '/scan';
   static const HASILSCAN = '/hasilscan';
   static const HALAMAN_MAPS = '/halaman-maps';
+
+  static const UPDATE_PROFILE = '/update-profile';
 }

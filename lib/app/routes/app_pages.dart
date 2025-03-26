@@ -4,10 +4,12 @@ import '../modules/berhasilDonasi/bindings/berhasil_donasi_binding.dart';
 import '../modules/berhasilDonasi/views/berhasil_donasi_view.dart';
 import '../modules/detailAcara/bindings/detail_acara_binding.dart';
 import '../modules/detailAcara/views/detail_acara_view.dart';
+
 import '../modules/detail_riwayat/bindings/detail_riwayat_binding.dart';
 import '../modules/detail_riwayat/views/detail_riwayat_view.dart';
 import '../modules/donasi/bindings/donasi_binding.dart';
 import '../modules/donasi/views/donasi_view.dart';
+
 import '../modules/formDonasi/bindings/form_donasi_binding.dart';
 import '../modules/formDonasi/views/form_donasi_view.dart';
 import '../modules/halamanMaps/bindings/halaman_maps_binding.dart';
@@ -22,8 +24,10 @@ import '../modules/listBarangDonasi/bindings/list_barang_donasi_binding.dart';
 import '../modules/listBarangDonasi/views/list_barang_donasi_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+
 import '../modules/mainpage/bindings/mainpage_binding.dart';
 import '../modules/mainpage/views/mainpage_view.dart';
+
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/riwayat/bindings/riwayat_binding.dart';
@@ -35,6 +39,7 @@ import '../modules/splash/views/splash_page_1_view.dart';
 import '../modules/splash/views/splash_page_2.dart';
 import '../modules/splash/views/splash_page_3.dart';
 import '../modules/splash/views/splash_view.dart';
+
 import '../modules/ubahpassword_email/bindings/ubahpassword_email_binding.dart';
 import '../modules/ubahpassword_email/views/ubahpassword_email_view.dart';
 import '../modules/ubahpassword_passwordbaru/bindings/ubahpassword_passwordbaru_binding.dart';
@@ -43,6 +48,9 @@ import '../modules/verifikasi_email/bindings/verifikasi_email_binding.dart';
 import '../modules/verifikasi_email/views/verifikasi_email_view.dart';
 import '../modules/verifikasi_ubah_password/bindings/verifikasi_ubah_password_binding.dart';
 import '../modules/verifikasi_ubah_password/views/verifikasi_ubah_password_view.dart';
+
+import '../modules/updateProfile/bindings/update_profile_binding.dart';
+import '../modules/updateProfile/views/update_profile_view.dart';
 
 part 'app_routes.dart';
 
@@ -54,7 +62,9 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
+
       page: () => const HomeView(),
+
       binding: HomeBinding(),
     ),
     GetPage(
@@ -158,6 +168,11 @@ class AppPages {
       name: _Paths.HALAMAN_MAPS,
       page: () => const HalamanMapsView(),
       binding: HalamanMapsBinding(),
+    ),
+    GetPage(
+      name: _Paths.UPDATE_PROFILE,
+      page: () => const UpdateProfileView(),
+      binding: UpdateProfileBinding(),
     ),
   ];
 }
