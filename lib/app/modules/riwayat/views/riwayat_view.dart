@@ -11,25 +11,53 @@ class RiwayatView extends GetView<RiwayatController> {
   const RiwayatView({super.key});
   @override
   Widget build(BuildContext context) {
+    final RiwayatController riw = Get.find<RiwayatController>();
+
     return DefaultTabController(
       initialIndex: 0,
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          bottom: TabBar(tabs: [Tab(text: "Proses"), Tab(text: "Selesai")]),
-          title: Text(
-            'Riwayat',
-            style: abu2Sty.copyWith(fontSize: 20, fontWeight: bold),
+          bottom: const TabBar(
+            tabs: [Tab(text: "Proses"), Tab(text: "Selesai")],
           ),
+          title: const Text("Riwayat"),
           centerTitle: true,
         ),
         body: TabBarView(
           children: [
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-              child: Column(children: [CardRiwayat()]),
+            Obx(
+              () =>
+                  riw.isLoading.value
+                      ? const Center(child: CircularProgressIndicator())
+                      : ListView.builder(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                          vertical: 20,
+                        ),
+                        itemCount: riw.prosesList.length,
+                        itemBuilder: (context, index) {
+                          return CardRiwayat(don: riw.prosesList[index]);
+                        },
+                      ),
             ),
-            Center(child: Text("Belum Ada data")),
+            Obx(
+              () =>
+                  riw.isLoading.value
+                      ? const Center(child: CircularProgressIndicator())
+                      : riw.selesaiList.isEmpty
+                      ? const Center(child: Text("Belum Ada data"))
+                      : ListView.builder(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                          vertical: 20,
+                        ),
+                        itemCount: riw.selesaiList.length,
+                        itemBuilder: (context, index) {
+                          return CardRiwayat(don: riw.selesaiList[index]);
+                        },
+                      ),
+            ),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:berasa_mobile/app/Widget/BtnBaru.dart';
+import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,7 +52,7 @@ class BerhasilDonasiView extends StatelessWidget {
                 h: 50,
                 nama: "Selanjutnya",
                 fungsi: () {
-                  Get.back();
+                  Get.toNamed(Routes.MAINPAGE);
                 },
               ),
             ),

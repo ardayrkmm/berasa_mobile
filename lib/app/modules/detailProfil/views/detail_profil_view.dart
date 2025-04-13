@@ -1,16 +1,20 @@
+import 'package:berasa_mobile/app/modules/login/controllers/login_controller.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart';
 
 class DetailProfilView extends StatelessWidget {
   const DetailProfilView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final loginC = Get.put(LoginController());
     Widget bagianHeader() {
       return Container(
         width: MediaQuery.of(context).size.width,
         height: 388,
+        padding: EdgeInsets.all(marginSemua),
         decoration: BoxDecoration(
           gradient: biruGradient,
           borderRadius: BorderRadius.only(
@@ -19,11 +23,26 @@ class DetailProfilView extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 80,
-              backgroundImage: AssetImage("assets/pp.jpg"),
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                icon: Icon(Icons.arrow_back_ios, color: putih),
+              ),
+            ),
+            Obx(
+              () => Align(
+                alignment: Alignment.bottomCenter,
+                child: CircleAvatar(
+                  radius: 80,
+                  backgroundImage: NetworkImage(
+                    "http://192.168.1.5:5000/static/uploads/${loginC.user!.img_profil}",
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -71,17 +90,25 @@ class DetailProfilView extends StatelessWidget {
             topRight: Radius.circular(50),
           ),
         ),
-        child: Column(
-          children: [
-            infoItem("assets/nama.png", "Nama", "Arda Yudrik M"),
-            infoItem("assets/email.png", "Email", "ardaku@gmail.com"),
-            infoItem("assets/telp.png", "No Telp", "081237237"),
-            infoItem(
-              "assets/lokasiitem.png",
-              "Alamat",
-              "Jl. Panggung no 56, Tetangga Anin",
-            ),
-          ],
+        child: Obx(
+          () => Column(
+            children: [
+              infoItem("assets/nama.png", "Nama", loginC.user!.nama),
+              infoItem("assets/email.png", "Email", loginC.user!.email),
+              infoItem(
+                "assets/telp.png",
+                "No Telp",
+                loginC.user!.nomer_telepon,
+              ),
+              infoItem(
+                "assets/lokasiitem.png",
+                "Alamat",
+                loginC.user!.alamat.isEmpty
+                    ? "Belum ada alamat,\nsilahkan Update alamatnya"
+                    : loginC.user!.alamat,
+              ),
+            ],
+          ),
         ),
       );
     }

@@ -1,3 +1,4 @@
+import 'package:berasa_mobile/app/Widget/BtnBaru.dart';
 import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -34,39 +35,74 @@ class ListBarangDonasiView extends GetView<ListBarangDonasiController> {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body: Obx(
+        () => Column(
           children: [
-            Container(
-              width: 300,
-              height: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/berhasil.png"),
+            controller.barangDonasi.isEmpty
+                ? Expanded(
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 300,
+                          height: 300,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/berhasil.png"),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'Belum Ada data donasinya ya',
+                          textAlign: TextAlign.center,
+                          style: abu2Sty.copyWith(
+                            fontSize: 20,
+                            color: abu2,
+                            fontWeight: bold,
+                          ),
+                        ),
+                        Text(
+                          'Silahkan tambah barang\ndonasi dahulu ya',
+                          textAlign: TextAlign.center,
+                          style: abu2Sty.copyWith(
+                            fontSize: 18,
+                            color: abu2,
+                            fontWeight: bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+                : Expanded(
+                  child: ListView.builder(
+                    itemCount: controller.barangDonasi.length,
+                    itemBuilder: (context, index) {
+                      final brang = controller.barangDonasi[index];
+                      return ListTile(
+                        title: Text(brang.deksripsi),
+                        subtitle: Text(
+                          "Jenis: ${brang.namaMakanan}, Jumlah: ${brang.jumlahPorsi}",
+                        ),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () {
+                            controller.hapus(index);
+                          },
+                        ),
+                      );
+                    },
+                  ),
                 ),
+            if (controller.barangDonasi.isNotEmpty)
+              BtnBaru(
+                fungsi: () => controller.kirim(controller.barangDonasi),
+                h: 44,
+                w: double.infinity,
+                nama: "Selanjutnya",
               ),
-            ),
-            Text(
-              'Belum Ada data donasinya ya',
-
-              textAlign: TextAlign.center,
-              style: abu2Sty.copyWith(
-                fontSize: 20,
-                color: abu2,
-                fontWeight: bold,
-              ),
-            ),
-            Text(
-              'Silahkan tambah barang\ndonasi dahulu ya',
-              textAlign: TextAlign.center,
-              style: abu2Sty.copyWith(
-                fontSize: 18,
-                color: abu2,
-                fontWeight: bold,
-              ),
-            ),
           ],
         ),
       ),

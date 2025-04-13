@@ -35,6 +35,7 @@ abstract class Routes {
   static const HALAMAN_MAPS = _Paths.HALAMAN_MAPS;
 
   static const UPDATE_PROFILE = _Paths.UPDATE_PROFILE;
+  static const PILI_LOKASI = _Paths.PILI_LOKASI;
 }
 
 abstract class _Paths {
@@ -71,4 +72,5 @@ abstract class _Paths {
   static const HALAMAN_MAPS = '/halaman-maps';
 
   static const UPDATE_PROFILE = '/update-profile';
+  static const PILI_LOKASI = '/pili-lokasi';
 }

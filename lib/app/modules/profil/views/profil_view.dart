@@ -1,3 +1,6 @@
+import 'package:berasa_mobile/app/data/Url/Urls.dart';
+import 'package:berasa_mobile/app/modules/login/controllers/login_controller.dart';
+import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +11,8 @@ class ProfilView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loginc = Get.find<LoginController>();
+
     return Scaffold(
       body: Column(
         children: [
@@ -25,17 +30,23 @@ class ProfilView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage("assets/pp.jpg"), // Foto profil
+                Obx(
+                  () => CircleAvatar(
+                    radius: 50,
+                    backgroundImage: NetworkImage(
+                      "http://192.168.1.5:5000/static/uploads/${loginc.user!.img_profil}",
+                    ), // Foto profil
+                  ),
                 ),
                 SizedBox(height: 10),
-                Text(
-                  "Amad Jaya",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                Obx(
+                  () => Text(
+                    loginc.user!.nama,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -64,9 +75,11 @@ class ProfilView extends StatelessWidget {
                 menuItem(
                   "assets/nama.png",
                   "Detail Profile",
-                  () => Get.toNamed('/detailProfil'),
+                  () => Get.toNamed(Routes.DETAIL_PROFIL),
                 ),
-                menuItem("assets/edit.png", "Edit Profile", () {}),
+                menuItem("assets/edit.png", "Edit Profile", () {
+                  Get.toNamed(Routes.UPDATE_PROFILE);
+                }),
                 menuItem("assets/lock.png", "Ubah Password", () {}),
                 Divider(),
                 menuItem("assets/about.png", "Tentang", () {}),
@@ -80,10 +93,9 @@ class ProfilView extends StatelessWidget {
     );
   }
 
-  // Widget untuk item menu dengan ikon dari assets
   Widget menuItem(String iconPath, String title, VoidCallback onTap) {
     return ListTile(
-      leading: Image.asset(iconPath, width: 16), // Gambar sebagai ikon
+      leading: Image.asset(iconPath, width: 16),
       title: Text(
         title,
         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),

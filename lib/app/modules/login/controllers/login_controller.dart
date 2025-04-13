@@ -15,6 +15,18 @@ class LoginController extends GetxController {
   RxBool cekLoading = false.obs;
   final box = GetStorage();
   Rx<Usermodel?> currentUser = Rx<Usermodel?>(null);
+  Usermodel? get user => currentUser.value;
+
+  @override
+  void onInit() {
+    super.onInit();
+    if (box.hasData("user")) {
+      var jsonUser = box.read("user");
+      currentUser.value = Usermodel.fromJson(
+        Map<String, dynamic>.from(jsonUser),
+      );
+    }
+  }
 
   @override
   void onClose() {
@@ -62,7 +74,7 @@ class LoginController extends GetxController {
       box.write("user", user.toJson());
       currentUser.value = user;
 
-      Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.MAINPAGE);
     } catch (e) {
       Get.snackbar("Error", "Terjadi kesalahan: $e");
     } finally {

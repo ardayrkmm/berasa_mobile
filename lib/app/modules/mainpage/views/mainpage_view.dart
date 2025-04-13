@@ -3,6 +3,7 @@ import 'package:berasa_mobile/app/modules/detailAcara/views/detail_acara_view.da
 import 'package:berasa_mobile/app/modules/donasi/views/donasi_view.dart';
 import 'package:berasa_mobile/app/modules/formDonasi/views/form_donasi_view.dart';
 import 'package:berasa_mobile/app/modules/home/views/home_view.dart';
+import 'package:berasa_mobile/app/modules/profil/views/profil_view.dart';
 import 'package:berasa_mobile/app/modules/riwayat/views/riwayat_view.dart';
 import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
@@ -20,7 +21,7 @@ class MainpageView extends GetView<MainpageController> {
       HomeView(),
       DonasiView(),
       RiwayatView(),
-      DetailAcaraView(),
+      ProfilView(),
     ];
     Widget ItemNavbar(String url, int index) {
       return GestureDetector(

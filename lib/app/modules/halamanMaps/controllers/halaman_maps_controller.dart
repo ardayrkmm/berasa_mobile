@@ -1,16 +1,27 @@
+import 'dart:convert';
+
+import 'package:berasa_mobile/app/data/Model/PenerimaModel.dart';
+import 'package:berasa_mobile/app/data/Url/Urls.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:http/http.dart' as http;
 
 class HalamanMapsController extends GetxController {
-  var lokasiPengguna = LatLng(-6.1751, 106.8650).obs;
+  var lokasiPengguna = LatLng(0, 0).obs;
   var loading = true.obs;
-
+  var penerimaList = <PenerimaModel>[].obs;
   @override
   void onInit() {
     super.onInit();
-    ambilLokasiPengguna();
+    ambilSemuaData();
+  }
+
+  Future<void> ambilSemuaData() async {
+    await ambilLokasiPengguna();
+    await ambilDataPenerima();
+    loading.value = false;
   }
 
   Future<void> ambilLokasiPengguna() async {
@@ -93,5 +104,23 @@ class HalamanMapsController extends GetxController {
         ),
       ),
     );
+  }
+
+  Future<void> ambilDataPenerima() async {
+    try {
+      final response = await http.get(Uri.parse("${Urls().url}/penerima/baca"));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        penerimaList.value =
+            (data as List).map((e) => PenerimaModel.fromJson(e)).toList();
+      } else {
+        print("Gagal ambil data lokasi");
+      }
+    } catch (e) {
+      print("Error: $e");
+    } finally {
+      loading.value = false;
+    }
   }
 }

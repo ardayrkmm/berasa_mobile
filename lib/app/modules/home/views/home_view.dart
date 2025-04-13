@@ -1,4 +1,5 @@
 import 'package:berasa_mobile/app/Widget/CardProgram.dart';
+import 'package:berasa_mobile/app/modules/login/controllers/login_controller.dart';
 import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
+    final loginc = Get.find<LoginController>();
     Widget bagianHeader() {
       return Container(
         width: MediaQuery.of(context).size.width,
@@ -34,6 +36,11 @@ class HomeView extends GetView<HomeController> {
                     height: 54,
                     decoration: BoxDecoration(
                       color: putih,
+                      image: DecorationImage(
+                        image: NetworkImage(
+                          "http://192.168.1.5:5000/static/uploads/${loginc.user!.img_profil}",
+                        ),
+                      ),
                       borderRadius: BorderRadius.circular(10000),
                     ),
                   ),
@@ -48,13 +55,15 @@ class HomeView extends GetView<HomeController> {
                             fontWeight: semiBold,
                           ),
                         ),
-                        Text(
-                          "Arda yudrik M",
-                          style: putihSty.copyWith(
-                            fontSize: 20,
-                            fontWeight: bold,
-                          ),
-                        ),
+                        Obx(() {
+                          return Text(
+                            loginc.user!.nama,
+                            style: putihSty.copyWith(
+                              fontSize: 20,
+                              fontWeight: bold,
+                            ),
+                          );
+                        }),
                       ],
                     ),
                   ),

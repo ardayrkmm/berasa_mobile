@@ -1,3 +1,4 @@
+import 'package:berasa_mobile/app/data/Model/DonasiModel.dart';
 import 'package:berasa_mobile/app/routes/app_pages.dart';
 import 'package:berasa_mobile/tema.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class CardRiwayat extends StatelessWidget {
-  const CardRiwayat({super.key});
+  final DonasiModel don;
+  CardRiwayat({super.key, required this.don});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,13 @@ class CardRiwayat extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage("assets/berhasil.png"),
+                  image:
+                      don.barangDonasi.isNotEmpty &&
+                              don.barangDonasi[0].galeriMakanan.isNotEmpty
+                          ? NetworkImage(
+                            "http://192.168.1.5:5000${don.barangDonasi[0].galeriMakanan[0].url}",
+                          )
+                          : AssetImage("assets/berhasil.png") as ImageProvider,
                 ),
               ),
             ),
@@ -40,7 +48,7 @@ class CardRiwayat extends StatelessWidget {
                       Icon(Icons.date_range, color: biru, size: 30),
                       SizedBox(width: 10),
                       Text(
-                        "14 -juli -2023",
+                        don.tanggal!,
                         style: abu2Sty.copyWith(fontSize: 18, fontWeight: bold),
                       ),
                     ],
@@ -54,7 +62,7 @@ class CardRiwayat extends StatelessWidget {
                       Icon(Icons.food_bank, color: biru, size: 30),
                       SizedBox(width: 10),
                       Text(
-                        "Makanan Sehat",
+                        don.nama,
                         style: abu2Sty.copyWith(fontSize: 18, fontWeight: bold),
                       ),
                     ],
@@ -68,7 +76,7 @@ class CardRiwayat extends StatelessWidget {
                       Icon(Icons.maps_home_work, color: biru, size: 30),
                       SizedBox(width: 10),
                       Text(
-                        "Yayasan",
+                        don.alamat,
                         style: abu2Sty.copyWith(fontSize: 18, fontWeight: bold),
                       ),
                     ],
