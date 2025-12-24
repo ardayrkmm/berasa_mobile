@@ -60,7 +60,7 @@ Proyek ini merupakan hasil kolaborasi dari:
     <td align="center">
       <a href="https://github.com/Mohfarriiiz88">
         <img src="https://github.com/Mohfarriiiz88.png" width="100px;" alt="Teguh"/><br />
-        <sub><b>Teguh</b></sub>
+        <sub><b>Paris</b></sub>
       </a>
     </td>
   </tr>
