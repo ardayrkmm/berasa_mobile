@@ -1,34 +1,34 @@
 # 🍲 Berasa (Berbagi Rasa) - Food Donation App
 
-**Berasa** adalah aplikasi mobile berbasis Flutter yang dirancang untuk mempermudah masyarakat dalam mendonasikan makanan kepada yang membutuhkan. Fokus utama aplikasi ini adalah membangun kepercayaan melalui transparansi data dan memudahkan akses titik lokasi penerima donasi di seluruh daerah.
+**Berasa** is a mobile application built with Flutter, designed to make it easier for people to donate food to those in need. The main focus of this app is to build trust through data transparency and provide easy access to the location of donation recipients across various regions.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Key Features
 
-* **🎁 Donasi Makanan**: Pengguna dapat mendaftarkan makanan yang ingin didonasikan (jenis makanan, jumlah, dan masa kedaluwarsa).
-* **🔍 Transparansi Donasi**: Fitur pelacakan real-time untuk melihat status donasi, mulai dari penjemputan oleh kurir hingga diterima oleh pihak yang membutuhkan.
-* **📍 Lokasi Terdekat**: Integrasi peta untuk menampilkan daerah atau panti asuhan/posko terdekat yang sangat membutuhkan bantuan donasi makanan.
-* **📊 Riwayat & Laporan**: Dokumentasi lengkap setiap donasi yang telah terselesaikan sebagai bentuk pertanggungjawaban publik.
+* **🎁 Food Donation**: Users can register the food they wish to donate (food type, quantity, and expiration date).
+* **🔍 Donation Transparency**: Real-time tracking feature to view donation status, from pickup by the courier to being received by the party in need.
+* **📍 Nearest Location**: Map integration to display the nearest areas, orphanages, or posts that urgently need food donations.
+* **📊 History & Reports**: Complete documentation of every completed donation as a form of public accountability.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Technologies Used
 
 * **Frontend**: [Flutter](https://flutter.dev/) (Cross-platform Android & iOS)
-* **Backend**: [REST API](https://restfulapi.net/) (Sebagai penghubung data dari server)
-* **Maps**: Google Maps API (Untuk fitur radius lokasi terdekat)
-* **Database**: MySQL / PostgreSQL (Melalui REST API)
+* **Backend**: [REST API](https://restfulapi.net/) (As a data bridge from the server)
+* **Maps**: Google Maps API (For nearest location radius feature)
+* **Database**: MySQL / PostgreSQL (Via REST API)
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi
+## 🚀 How to Run the Application
 
 1.  **Clone repository**:
     ```bash
-    git clone [https://github.com/username-kamu/berasa-app.git](https://github.com/username-kamu/berasa-app.git)
+    git clone [https://github.com/username-your/berasa-app.git](https://github.com/username-your/berasa-app.git)
     ```
-2.  **Masuk ke folder proyek**:
+2.  **Navigate to the project folder**:
     ```bash
     cd berasa-app
     ```
@@ -36,9 +36,9 @@
     ```bash
     flutter pub get
     ```
-4.  **Konfigurasi API**:
-    Sesuaikan `base_url` pada file konfigurasi proyek dengan endpoint REST API Anda.
-5.  **Jalankan aplikasi**:
+4.  **API Configuration**:
+    Adjust the `base_url` in the project configuration file to your REST API endpoint.
+5.  **Run the application**:
     ```bash
     flutter run
     ```
@@ -47,7 +47,7 @@
 
 ## 👥 Contributors
 
-Proyek ini merupakan hasil kolaborasi dari:
+This project is a collaboration between:
 
 <table>
   <tr>
@@ -59,7 +59,7 @@ Proyek ini merupakan hasil kolaborasi dari:
     </td>
     <td align="center">
       <a href="https://github.com/Mohfarriiiz88">
-        <img src="https://github.com/Mohfarriiiz88.png" width="100px;" alt="Teguh"/><br />
+        <img src="https://github.com/Mohfarriiiz88.png" width="100px;" alt="Paris"/><br />
         <sub><b>Paris</b></sub>
       </a>
     </td>
@@ -68,14 +68,14 @@ Proyek ini merupakan hasil kolaborasi dari:
 
 ---
 
-## 🎯 Tujuan Pengembangan
+## 🎯 Development Goals
 
-* Mengurangi angka pembuangan makanan (*food waste*) di Indonesia.
-* Mempermudah distribusi bantuan makanan secara merata ke daerah-daerah yang membutuhkan.
-* Meningkatkan kepercayaan donatur melalui sistem pelacakan donasi yang transparan.
+* Reduce food waste figures in Indonesia.
+* Facilitate the even distribution of food aid to regions in need.
+* Increase donor trust through a transparent donation tracking system.
 
 ---
 
-## 📄 Lisensi
+## 📄 License
 
-Proyek ini dibuat untuk keperluan **edukasi dan pengembangan sosial**. Penggunaan dan modifikasi diperbolehkan dengan tetap mencantumkan kredit pengembang.
+This project was created for **educational and social development** purposes. Use and modification are permitted as long as developer credit is maintained.
